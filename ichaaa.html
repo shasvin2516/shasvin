@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ichaaaa 💌</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background:
+        linear-gradient(rgba(27, 2, 139, 0.45), rgba(226, 53, 140, 0.45), rgba(124, 0, 182, 0.45)),
+        url("icha-bg.jpg") center/cover no-repeat fixed;
+      color: #ff4f88;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px 60px;
+      text-align: center;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .floating-hearts span {
+      position: absolute;
+      font-size: 24px;
+      animation: float 7s linear infinite;
+      opacity: 0.7;
+    }
+
+    .floating-hearts span:nth-child(1) { left: 8%; top: 80%; animation-delay: 0s; }
+    .floating-hearts span:nth-child(2) { left: 20%; top: 90%; animation-delay: 2s; }
+    .floating-hearts span:nth-child(3) { left: 35%; top: 85%; animation-delay: 4s; }
+    .floating-hearts span:nth-child(4) { left: 55%; top: 92%; animation-delay: 1s; }
+    .floating-hearts span:nth-child(5) { left: 70%; top: 88%; animation-delay: 3s; }
+    .floating-hearts span:nth-child(6) { left: 85%; top: 95%; animation-delay: 5s; }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 0; }
+      20% { opacity: 0.8; }
+      100% { transform: translateY(-100vh) scale(1.3); opacity: 0; }
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      line-height: 1.2;
+      color: #fff;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+
+    .sub {
+      font-size: 1.2rem;
+      max-width: 700px;
+      line-height: 1.8;
+      color: #fff5fb;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    }
+
+    .photo-frame {
+      width: 260px;
+      padding: 10px;
+      margin: 20px auto 20px;
+      background: rgba(255, 255, 255, 0.55);
+      border-radius: 24px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      object-fit: cover;
+    }
+
+    .btn {
+      border: none;
+      background: #ff5f97;
+      color: white;
+      padding: 14px 28px;
+      margin: 8px;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 8px 20px rgba(255, 95, 151, 0.25);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      background: #ff3f82;
+    }
+
+    .section {
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 28px;
+      padding: 30px 25px;
+      margin: 30px 0;
+      box-shadow: 0 10px 30px rgba(255, 105, 145, 0.18);
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 18px;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .section p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: #fff7fb;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.18);
+    }
+
+    .reasons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: rgba(255, 245, 249, 0.78);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 8px 20px rgba(255, 95, 151, 0.12);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #ff4f88;
+    }
+
+    .card p {
+      font-size: 0.98rem;
+      color: #ff6d9d;
+      line-height: 1.7;
+      text-shadow: none;
+    }
+
+    .final-message {
+      font-size: 1.2rem;
+      line-height: 2;
+      color: #fff7fb;
+    }
+
+    #answerBox {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #fff;
+      font-weight: 600;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    }
+
+    #replyText {
+      margin-top: 20px;
+      font-size: 1.15rem;
+      color: #fff;
+      font-weight: 600;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #fff5fb;
+      font-size: 0.95rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+     /* ================= SLIDESHOW ================= */
+
+    .slideshow-container{
+    position:relative;
+    width:100%;
+    max-width:500px;
+    height:600px;
+
+    margin:35px auto;
+
+    overflow:hidden;
+    border-radius:25px;
+    background:#111;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+    
+
+    /* PERFECT IMAGE FIT */
+
+    .slide{
+      position:absolute;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+
+      background:#111;
+
+      padding:10px;
+
+      opacity:0;
+      transition:opacity 1s ease-in-out;
+    }
+
+    .slide.active{
+      opacity:1;
+    }
+
+    /* ================= SLIDE BUTTONS ================= */
+
+    .slide-btn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background:rgba(0,0,0,0.45);
+      border:none;
+      color:white;
+      font-size:2rem;
+      width:55px;
+      height:55px;
+      cursor:pointer;
+      border-radius:50%;
+      transition:0.3s;
+      z-index:5;
+      backdrop-filter:blur(10px);
+    }
+
+    .slide-btn:hover{
+      background:rgba(255,79,129,0.85);
+      transform:translateY(-50%) scale(1.08);
+    }
+
+    .prev{
+      left:20px;
+    }
+
+    .next{
+      right:20px;
+    }
+
+   
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .sub {
+        font-size: 1rem;
+      }
+
+      .section h2 {
+        font-size: 1.6rem;
+      }
+
+      .photo-frame {
+        width: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="floating-hearts">
+      <span>💗</span>
+      <span>💌</span>
+      <span>🌷</span>
+      <span>💕</span>
+      <span>✨</span>
+      <span>🫶</span>
+    </div>
+
+    <div class="container">
+      <h1>ichaaaa, tinggiiii, gadooooo 💗</h1>
+      <p class="sub">
+        hi you 🤍 i made this little website just for you hehe.  
+        maybe you already know, maybe you don’t… but i just wanted to make something cute
+        because you’ve been on my mind more than you should 😒💞
+      </p>
+     <div class="slideshow-container">
+
+    <img class="slide active"
+        src="https://i.ibb.co/4RdN5gR3/icha-1.jpg"
+        alt="memory1">
+
+    <img class="slide"
+        src="https://i.ibb.co/pBj4Ncq3/icha-2.jpg"
+        alt="memory2">
+
+    <img class="slide"
+        src="https://i.ibb.co/4wRy7QWB/icha-5.jpg"
+        alt="memory3">
+
+    <img class="slide"
+        src="https://i.ibb.co/mr6XdNQ5/icha-6.jpg"
+        alt="memory4">
+
+    <img class="slide"
+        src="https://i.ibb.co/S4p6TM20/icha-7.jpg"
+        alt="memory5">
+
+    <img class="slide"
+        src="https://i.ibb.co/y9XZQ7F/icha-9.jpg"
+        alt="memory6">
+
+    <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
+    <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
+
+</div>
+      <button class="btn" onclick="scrollToSection('why')">tap here, pretty 😚</button>
+      <button class="btn" onclick="showSecret()">or press this one 🤭</button>
+
+      <div id="answerBox"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="section" id="why">
+      <h2>why i made this for you 💌</h2>
+      <p>
+        because out of everyone, you somehow became one of my favourite people.
+        you’re annoying sometimes, you make me geram, you act macam tak kisah,
+        but somehow… i still like talking to you, thinking about you, and making things for you 😔💗
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>reasons i like you 😾💞</h2>
+      <div class="reasons">
+        <div class="card">
+          <h3>your vibe 😵‍💫</h3>
+          <p>
+            i don’t know how to explain it properly, but your presence just feels different.
+            even when you’re being gadoh, i still find you cute.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>you stay in my head 🙄</h3>
+          <p>
+            like actually… why are you there all the time? i’ll be doing random things
+            and suddenly think of you. very irritating of you honestly 😒💗
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>you’re special to me 🤍</h3>
+          <p>
+            maybe i don’t always say it directly, but you matter to me more than i show.
+            and if i made a whole website for you… that should say enough already 😭
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>a tiny message for you 🌷</h2>
+      <p class="final-message">
+        if you ever wonder whether someone appreciates your existence a little too much…  
+        yes, it’s probably me 💗  
+        and if you ever wonder whether i like you a bit more than i should…  
+        also yes 😔💌  
+        so this is the nickname i keep for you ichaaaa, tinggiiii, gadooooo.  
+        this tiny soft thing is for you 🫶
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>important question 😚</h2>
+      <p>do you like me back or do i have to keep being cute like this?</p>
+      <button class="btn" onclick="reply('yes of course 😳💗')">yes 💗</button>
+      <button class="btn" onclick="reply('maybe… if you keep doing this 🤭')">maybe 🤭</button>
+      <button class="btn" onclick="reply('you’re too cute to ignore 😒💕')">i’m shy 🙈</button>
+
+      <div id="replyText"></div>
+    </section>
+
+    <footer>
+      made with too much softness and a bit too many feelings for you 💌
+    </footer>
+  </div>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function showSecret() {
+      const box = document.getElementById("answerBox");
+      box.innerHTML = "secret message: u are so cute and i falling for u every time 😚💗";
+    }
+
+    function reply(text) {
+      document.getElementById("replyText").innerHTML = text;
+    }
+    let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+
+    currentSlide = (index + slides.length) % slides.length;
+
+    slides[currentSlide].classList.add("active");
+}
+
+function changeSlide(direction) {
+    showSlide(currentSlide + direction);
+}
+
+setInterval(() => {
+    changeSlide(1);
+}, 3000);
+  </script>
+</body>
+</html>
